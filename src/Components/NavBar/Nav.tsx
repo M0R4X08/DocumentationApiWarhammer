@@ -21,10 +21,10 @@ const Nav: React.FC<NavProps> = () => {
     setShowSmallMenu(!showSmallMenu);
   };
   return (
-    <nav className=" bg-red-300 p-4 top-0">
+    <nav className=" p-2 top-0 mt-2">
       <div className="container mx-auto flex justify-between items-center">
-        <div id="logo" className="mx-12 fixed">
-          <a href="/" className="text-6xl text-red-700">
+        <div id="logo" className="mx-12">
+          <a href="/" className="text-6xl  text-red-700">
             <LogoRest />
           </a>
         </div>
