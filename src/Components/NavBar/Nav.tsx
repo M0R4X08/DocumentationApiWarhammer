@@ -23,7 +23,7 @@ const Nav: React.FC<NavProps> = () => {
   return (
     <nav className="p-2 top-0 mt-8">
       <div className="mx-auto flex justify-between items-center">
-        <div id="logo" className="mx-8 sm:mx-8 lg:mx-12">
+        <div id="logo" className="mx-6 sm:mx-20 lg:mx-20">
           <a href="/" className="text-5xl sm:text-6x1 lg:text-6xl  text-red-700">
             <LogoRest />
           </a>
@@ -33,7 +33,6 @@ const Nav: React.FC<NavProps> = () => {
           <div className="hidden sm:flex gap-6 text-lg">
             <a href="/">Home</a>
             <a href="/">Documentacion</a>
-            <a href="/">Invitame a un cafe</a>
           </div>
           <div className="hidden lg:flex items-center h-full ">
             <span className="text-4xl">
