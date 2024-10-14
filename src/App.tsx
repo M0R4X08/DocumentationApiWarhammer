@@ -6,8 +6,8 @@ function App() {
     <>
       <SideBar />
 
-      <div className="flex flex-col flex-grow container ml-0 sm:ml-[18%]">
-        <header>
+      <div className="flex flex-col flex-grow container ml-0 sm:ml-[18%] sm:overflow-x-hidden">
+        <header className="container">
           <Nav />
         </header>
 

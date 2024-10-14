@@ -21,15 +21,15 @@ const Nav: React.FC<NavProps> = () => {
     setShowSmallMenu(!showSmallMenu);
   };
   return (
-    <nav className=" p-2 top-0 mt-2">
-      <div className="container mx-auto flex justify-between items-center">
-        <div id="logo" className="mx-12">
-          <a href="/" className="text-6xl  text-red-700">
+    <nav className="p-2 top-0 mt-8">
+      <div className="mx-auto flex justify-between items-center">
+        <div id="logo" className="mx-8 sm:mx-8 lg:mx-12">
+          <a href="/" className="text-5xl sm:text-6x1 lg:text-6xl  text-red-700">
             <LogoRest />
           </a>
         </div>
 
-        <div className="flex gap-2 w-full h-full items-center justify-center ml-72 sm:ml-32">
+        <div className="flex gap-2 w-full h-full items-center justify-end mr-48 sm:mr-24 lg:mr-52 xl:mr-28">
           <div className="hidden sm:flex gap-6 text-lg">
             <a href="/">Home</a>
             <a href="/">Documentacion</a>
@@ -56,7 +56,7 @@ const Nav: React.FC<NavProps> = () => {
           </div>
         </div>
         <div
-          className="hidden sm:block lg:hidden relative px-3 sm:px-5 "
+          className="hidden sm:block lg:hidden relative md:mx-4 "
           onClick={handleShowMediaMenu}
         >
           <button className="text-gray-700 focus:outline-none text-2xl">
@@ -64,7 +64,7 @@ const Nav: React.FC<NavProps> = () => {
           </button>
           {showMediaMenu && <MediumScreenMenu />}
         </div>
-        <div className="sm:hidden relative" onClick={handleShowSmallMenu}>
+        <div className="sm:hidden sm:mx-4 right-4 relative" onClick={handleShowSmallMenu}>
           <button className="text-gray-700 focus:outline-none text-2xl">
             <IconMenuSmall />
           </button>

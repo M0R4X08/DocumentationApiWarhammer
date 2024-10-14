@@ -8,7 +8,7 @@ interface ShowListProps {
 const ShowList: React.FC<ShowListProps> = ({ title, List }) => {
     return (
         <>
-        <ul className="flex min-w-0 flex-col gap-2.5 m-5 mt-2.5 font-lexend text-gray-900">
+        <ul className="flex min-w-0 flex-col gap-2.5 m-5 mt-2.5 font-lexend text-gray-900 ">
         <li className="text-[1.2rem]  font-semibold mb-4">
           <h3>{title}</h3>
         </li>
