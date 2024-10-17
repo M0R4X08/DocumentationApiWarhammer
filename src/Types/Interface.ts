@@ -10,12 +10,19 @@ export interface CodeList{
     style: any,
     styleDark: any,
     code: any,
+    codeOutput?: any,
 }
 
 export interface ShowCodeProps {
     id: string;
-    code: string;
+    code: any;
+    codeOutput?: any;
     title: string;
     style: any;
     styleDark: any;
-  }
+}
+
+export interface ShowCodeListProps {
+    title: string;
+    codeList: CodeList[];
+}

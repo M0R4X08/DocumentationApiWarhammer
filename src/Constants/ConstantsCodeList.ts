@@ -1,6 +1,9 @@
 import { oneLight, oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { findCharactersAll,findCharacterSingle,limitResultsCharacters, addNewCharacter,updateCharacter } from "../Constants/ConstantsCode";
 import { findUserAll, findUserSingle, limitResultsUser, addNewUser, updateUser } from "../Constants/ConstantsCode";
+import { findCharacterAllOutput,findCharacterSingleOutput,limitResultsCharactersOutput,addNewCharacterOutput,updateCharacterOutput } from "../Constants/ConstantsCode";
+
+import { findUserAllOutput, findUserSingleOutput, limitResultsUserOutput,addNewUserOutput,updateUserOutput } from "../Constants/ConstantsCode";
 
 export const CodeListCharacter =[
     {
@@ -9,6 +12,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: findCharactersAll,
+      codeOutput: findCharacterAllOutput,
     },
     {
       id: "character-find-single",
@@ -16,6 +20,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: findCharacterSingle,
+      codeOutput: findCharacterSingleOutput,
     },
     {
       id: "character-limit",
@@ -23,6 +28,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: limitResultsCharacters,
+      codeOutput: limitResultsCharactersOutput,
     },
     {
       id: "character-add",
@@ -30,6 +36,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: addNewCharacter,
+      codeOutput: addNewCharacterOutput,
     },
     {
       id: "character-update",
@@ -37,6 +44,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: updateCharacter,
+      codeOutput: updateCharacterOutput,
     }
   ];
   
@@ -47,6 +55,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: findUserAll,
+      codeOutput: findUserAllOutput,
     },
     {
       id: "user-find-single",
@@ -54,6 +63,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: findUserSingle,
+      codeOutput: findUserSingleOutput,
     },
     {
       id: "user-limit",
@@ -61,6 +71,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: limitResultsUser,
+      codeOutput: limitResultsUserOutput,
     },
     {
       id: "user-add",
@@ -68,6 +79,7 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: addNewUser,
+      codeOutput: addNewUserOutput,
     },
     {
       id: "user-update",
@@ -75,5 +87,6 @@ export const CodeListCharacter =[
       style: oneLight,
       styleDark: oneDark,
       code: updateUser,
+      codeOutput: updateUserOutput,
     }
   ];

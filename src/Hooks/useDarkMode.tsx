@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 
 const useDarkMode = () => {
   const verifyClass = () => {
-    return document.documentElement.classList.contains("dark");
+    const isDark = localStorage.getItem("darkMode");
+    if (isDark && isDark === "enabled") {
+      return true;
+    }
+    return false;
   };
   const [isDark, setIsDark] = useState(verifyClass());
 
@@ -18,7 +22,6 @@ const useDarkMode = () => {
       observer.disconnect();
     };
   }, []);
-
   return isDark;
 };
 

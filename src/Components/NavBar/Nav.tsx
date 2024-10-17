@@ -8,9 +8,8 @@ import { Linkedin } from "../../Iconos/Linkedin.tsx";
 import MediumScreenMenu from "./MediumScreenMenu.tsx";
 import SmallScreenMenu from "./SmallScreenMenu.tsx";
 import SwitchDarkMode from "../SwitchDarkMode/SwitchDarkMode.tsx";
-interface NavProps {}
 
-const Nav: React.FC<NavProps> = () => {
+const Nav = () => {
   const [showMediaMenu, setShowMediaMenu] = React.useState(false);
   const [showSmallMenu, setShowSmallMenu] = React.useState(false);
 

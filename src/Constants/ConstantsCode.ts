@@ -3,17 +3,151 @@ export const findCharactersAll = `fetch('https://localhost:3000/api/characters/a
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
 
+export const findCharacterAllOutput = `{
+  "totalData": 19,
+  "totalPages": 1,
+  "currentPage": 1,
+  "data": [
+    {
+      "id": 1,
+      "name": "Roboute Guilliman",
+      "race": {
+        "id": 1,
+        "name": "Human"
+      },
+      "faction": {
+        "id": 1,
+        "name": "Imperium of Man"
+      },
+      "subfaction": {
+        "id": 1,
+        "name": "Adeptus Astartes"
+      },
+      "rank": {
+        "id": 2,
+        "name": "Primarch"
+      },
+      "alignment": {
+        "id": 1,
+        "name": "Loyal to the Imperium"
+      },
+      "home_planet": "Macragge",
+      "special_abilities": "Exceptional strategist, extraordinary leadership and administrative skills, combat prowess.",
+      "main_weapons": "Gladius Incandor, Hand of Dominion.",
+      "armor": "Armor of Fate",
+      "vehicle": "",
+      "history": "Roboute Guilliman was the Primarch of the Ultramarines Legion and one of the Emperor’s sons. He is known for his role in the Unification of Humanity and his contribution to the creation of the Codex Astartes.",
+      "significant_battles": "Battle of Calth, Battle of Macragge, Great Crusade War.",
+      "relationships": "Konor Guilliman, Tarasha Euten, Emperor of Mankind, Horus Lupercal, Rogal Dorn, Sanguinius, Leman Russ, Ferrus Manus, Ultramarines Chapter.",
+      "main_achievements": "Creation of the Codex Astartes, Lord Commander of the Imperium.",
+      "creation_date": "First founding in the 30th century",
+      "age": "10,000 years",
+      "additional_notes": "",
+      "image": ""
+    },
+    /*...*/
+  ]
+}
+`;
+
 export const findCharacterSingle = `fetch('https://localhost:3000/api/characters/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
 
+export const findCharacterSingleOutput = `{
+  "data": [
+    {
+      "id": 1,
+      "name": "Roboute Guilliman",
+      "race": {
+        "id": 1,
+        "name": "Human"
+      },
+      "faction": {
+        "id": 1,
+        "name": "Imperium of Man"
+      },
+      "subfaction": {
+        "id": 1,
+        "name": "Adeptus Astartes"
+      },
+      "rank": {
+        "id": 2,
+        "name": "Primarch"
+      },
+      "alignment": {
+        "id": 1,
+        "name": "Loyal to the Imperium"
+      },
+      "home_planet": "Macragge",
+      "special_abilities": "Exceptional strategist, extraordinary leadership and administrative skills, combat prowess.",
+      "main_weapons": "Gladius Incandor, Hand of Dominion.",
+      "armor": "Armor of Fate",
+      "vehicle": "",
+      "history": "Roboute Guilliman was the Primarch of the Ultramarines Legion and one of the Emperor’s sons. He is known for his role in the Unification of Humanity and his contribution to the creation of the Codex Astartes.",
+      "significant_battles": "Battle of Calth, Battle of Macragge, Great Crusade War.",
+      "relationships": "Konor Guilliman, Tarasha Euten, Emperor of Mankind, Horus Lupercal, Rogal Dorn, Sanguinius, Leman Russ, Ferrus Manus, Ultramarines Chapter.",
+      "main_achievements": "Creation of the Codex Astartes, Lord Commander of the Imperium.",
+      "creation_date": "First founding in the 30th century",
+      "age": "10,000 years",
+      "additional_notes": "",
+      "image": ""
+    }
+  ]
+}`;
+
 export const limitResultsCharacters = `fetch('https://localhost:3000/api/characters/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
+
+export const limitResultsCharactersOutput = `{
+  "totalData": 19,
+  "totalPages": 19,
+  "currentPage": 1,
+  "data": [
+    {
+      "id": 1,
+      "name": "Roboute Guilliman",
+      "race": {
+        "id": 1,
+        "name": "Human"
+      },
+      "faction": {
+        "id": 1,
+        "name": "Imperium of Man"
+      },
+      "subfaction": {
+        "id": 1,
+        "name": "Adeptus Astartes"
+      },
+      "rank": {
+        "id": 2,
+        "name": "Primarch"
+      },
+      "alignment": {
+        "id": 1,
+        "name": "Loyal to the Imperium"
+      },
+      "home_planet": "Macragge",
+      "special_abilities": "Exceptional strategist, extraordinary leadership and administrative skills, combat prowess.",
+      "main_weapons": "Gladius Incandor, Hand of Dominion.",
+      "armor": "Armor of Fate",
+      "vehicle": "",
+      "history": "Roboute Guilliman was the Primarch of the Ultramarines Legion and one of the Emperor’s sons. He is known for his role in the Unification of Humanity and his contribution to the creation of the Codex Astartes.",
+      "significant_battles": "Battle of Calth, Battle of Macragge, Great Crusade War.",
+      "relationships": "Konor Guilliman, Tarasha Euten, Emperor of Mankind, Horus Lupercal, Rogal Dorn, Sanguinius, Leman Russ, Ferrus Manus, Ultramarines Chapter.",
+      "main_achievements": "Creation of the Codex Astartes, Lord Commander of the Imperium.",
+      "creation_date": "First founding in the 30th century",
+      "age": "10,000 years",
+      "additional_notes": "",
+      "image": ""
+    }
+  ]
+}`;
 
 export const addNewCharacter = `fetch('https://localhost:3000/api/characters/create',
   {
@@ -49,6 +183,12 @@ export const addNewCharacter = `fetch('https://localhost:3000/api/characters/cre
   .then((data) => console.log(data))
 `;
 
+export const addNewCharacterOutput = `{
+    "message": "Character created successfully",
+    "id": 20,
+}
+`;
+
 export const updateCharacter = `fetch('https://localhost:3000/api/characters/update/1',
   {
     method: 'PUT',
@@ -65,10 +205,29 @@ export const updateCharacter = `fetch('https://localhost:3000/api/characters/upd
   .then((data) => console.log(data))
 `;
 
+export const updateCharacterOutput = `{
+  "message": "Characters updated successfully"
+}`;
+
 export const findUserAll = `fetch('https://localhost:3000/api/user/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
+
+export const findUserAllOutput = `{
+  "totalData": 1,
+  "totalPages": 1,
+  "currentPage": 1,
+  "data": [
+    {
+      "id": 1,
+      "username": "m0r4x",
+      "email": "morax@gmail.com",
+      "password": "m0r4x"
+    }
+  ]
+}`;
+
 
 export const findUserSingle = `fetch('https://localhost:3000/api/user/1')
       .then((response) => res.json()) 
@@ -76,11 +235,34 @@ export const findUserSingle = `fetch('https://localhost:3000/api/user/1')
       .catch(error => console.error('Error:', error));
 `;
 
+export const findUserSingleOutput = `{
+  "data": {
+    "id": 1,
+    "username": "m0r4x",
+    "email": "morax@gmail.com",
+    "password": "m0r4x"
+  }
+}`;
+
 export const limitResultsUser = `fetch('https://localhost:3000/api/user/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
+
+export const limitResultsUserOutput = `{
+  "totalData": 1,
+  "totalPages": 1,
+  "currentPage": 1,
+  "data": [
+    {
+      "id": 1,
+      "username": "m0r4x",
+      "email": "morax@gmail.com",
+      "password": "m0r4x"
+    }
+  ]
+}`;
 
 export const addNewUser = `fetch('https://localhost:3000/api/user/create',
   {
@@ -101,6 +283,12 @@ export const addNewUser = `fetch('https://localhost:3000/api/user/create',
   .then((data) => console.log(data))
 `;
 
+export const addNewUserOutput = `{
+  "message": "User created successfully",
+  "id": 2,
+}`;
+
+
 export const updateUser = `fetch('https://localhost:3000/api/user/update/1',
   {
     method: 'PUT',
@@ -116,3 +304,13 @@ export const updateUser = `fetch('https://localhost:3000/api/user/update/1',
   .then((response) => response.json())
   .then((data) => console.log(data))
 `;
+
+export const updateUserOutput = `{
+  "message": "Characters updated successfully"
+}`;
+
+export const loginOutput = `
+{
+  "message": "User logged in successfully",
+  "token": "token"
+}`;

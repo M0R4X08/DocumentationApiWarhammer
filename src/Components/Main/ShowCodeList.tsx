@@ -1,10 +1,5 @@
 import ShowCode from "./ShowCode";
-import { CodeList } from "../../Types/Interface";
-
-interface ShowCodeListProps {
-  title: string;
-  codeList: CodeList[];
-}
+import { ShowCodeListProps } from "../../Types/Interface";
 
 const ShowCodeList: React.FC<ShowCodeListProps> = ({ codeList, title }) => {
   return (
@@ -19,6 +14,7 @@ const ShowCodeList: React.FC<ShowCodeListProps> = ({ codeList, title }) => {
               style={code.style}
               styleDark={code.styleDark}
               code={code.code}
+              codeOutput={code.codeOutput}
             />
           </li>
         ))}
