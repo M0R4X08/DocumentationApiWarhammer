@@ -1,22 +1,38 @@
+import React from "react";
 import { Github } from "../../Iconos/Github";
 import { Linkedin } from "../../Iconos/Linkedin";
+import SwitchDarkMode from "../SwitchDarkMode/SwitchDarkMode";
 
-const SmallScreenMenu = () => {
+interface SmallScreenMenuProps {
+  showSmallMenu: boolean;
+  handleShowSmallMenu: () => void;
+}
+const SmallScreenMenu: React.FC<SmallScreenMenuProps> = ({
+  showSmallMenu,
+  handleShowSmallMenu,
+}) => {
   return (
-    <div className="fixed flex flex-col items-center top-16 left-0 w-full h-screen p-4 bg-gray-100/90 border-2 border-gray-300/80 ">
-      <div className="flex flex-col items-center gap-10 text-lg p-4 mt-28">
+    <div
+      className={`${
+        showSmallMenu ? "flex" : "hidden"
+      } fixed  flex-col items-center top-0 left-0 w-full h-screen p-4 bg-gray-100 dark:bg-gray-900 `}
+    >
+      <div className="fixed top-8 left-8">
+        <button onClick={handleShowSmallMenu}>X</button>
+      </div>
+      <div className="flex flex-col items-center gap-10 mb-10 text-lg p-4 mt-28 text-gray-800/90 dark:text-gray-100 ">
         <a href="/">Home</a>
         <a href="/">Documentacion</a>
-        <a href="/">Invitame a un cafe</a>
       </div>
-      <div className="bg-slate-600 text-white px-4 py-1 rounded-md focus:outline-none mt-6">
-        <button>Dark</button>
+      <div className="flex gap-3">
+        <p>Dark Mode:</p>
+        <SwitchDarkMode />
       </div>
       <div className="flex gap-8 text-4xl mt-8">
-        <a href="/">
+        <a href="/" className="text-black dark:text-white">
           <Github />
         </a>
-        <a href="/">
+        <a href="/" className="text-blue-700/95 dark:text-gray-300">
           <Linkedin />
         </a>
       </div>

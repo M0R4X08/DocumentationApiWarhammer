@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { LineY } from "../../Iconos/LineY.tsx";
 import { IconMenuSmall } from "../../Iconos/IconMenuSmall.tsx";
 import { IconMenuMedium } from "../../Iconos/IconMenuMedium.tsx";
@@ -7,6 +7,7 @@ import { Github } from "../../Iconos/Github.tsx";
 import { Linkedin } from "../../Iconos/Linkedin.tsx";
 import MediumScreenMenu from "./MediumScreenMenu.tsx";
 import SmallScreenMenu from "./SmallScreenMenu.tsx";
+import SwitchDarkMode from "../SwitchDarkMode/SwitchDarkMode.tsx";
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
@@ -17,14 +18,22 @@ const Nav: React.FC<NavProps> = () => {
     setShowMediaMenu(!showMediaMenu);
   };
 
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden");
+  }, [showSmallMenu]);
+
   const handleShowSmallMenu = () => {
     setShowSmallMenu(!showSmallMenu);
   };
+
   return (
-    <nav className="p-2 top-0 mt-8">
-      <div className="mx-auto flex justify-between items-center">
+    <nav className="p-2 top-0 mt-6 mb-4">
+      <div className="mx-auto flex justify-between items-center text-gray-800/90 dark:text-gray-100">
         <div id="logo" className="mx-6 sm:mx-20 lg:mx-20">
-          <a href="/" className="text-5xl sm:text-6x1 lg:text-6xl  text-red-700">
+          <a
+            href="/"
+            className="text-5xl sm:text-6x1 lg:text-6xl  text-red-700"
+          >
             <LogoRest />
           </a>
         </div>
@@ -38,36 +47,42 @@ const Nav: React.FC<NavProps> = () => {
             <span className="text-4xl">
               <LineY />
             </span>
-            <button className="bg-slate-600 text-white px-4 py-1 rounded-md focus:outline-none">
-              Dark
-            </button>
+            <SwitchDarkMode />
             <span className="text-4xl">
               <LineY />
             </span>
           </div>
           <div className="gap-6 items-center h-full hidden lg:flex text-3xl ">
-            <a href="/">
+            <a href="/" className="text-black dark:text-white">
               <Github />
             </a>
-            <a href="/">
+            <a href="/" className="text-blue-700/95 dark:text-gray-300">
               <Linkedin />
             </a>
           </div>
         </div>
-        <div
-          className="hidden sm:block lg:hidden relative md:mx-4 "
-          onClick={handleShowMediaMenu}
-        >
-          <button className="text-gray-700 focus:outline-none text-2xl">
+        <div className="hidden sm:block lg:hidden relative md:mx-4 ">
+          <button
+            onClick={handleShowMediaMenu}
+            className="text-gray-700 dark:text-gray-100/80 focus:outline-none text-2xl"
+          >
             <IconMenuMedium />
           </button>
           {showMediaMenu && <MediumScreenMenu />}
         </div>
-        <div className="sm:hidden sm:mx-4 right-4 relative" onClick={handleShowSmallMenu}>
-          <button className="text-gray-700 focus:outline-none text-2xl">
+        <div className="sm:hidden sm:mx-4 right-4 relative">
+          <button
+            onClick={handleShowSmallMenu}
+            className="text-gray-700 dark:text-gray-100/80 focus:outline-none text-2xl"
+          >
             <IconMenuSmall />
           </button>
-          {showSmallMenu && <SmallScreenMenu />}
+          {showSmallMenu && (
+            <SmallScreenMenu
+              showSmallMenu={showSmallMenu}
+              handleShowSmallMenu={handleShowSmallMenu}
+            />
+          )}
         </div>
       </div>
     </nav>

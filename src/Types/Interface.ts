@@ -11,3 +11,11 @@ export interface CodeList{
     styleDark: any,
     code: any,
 }
+
+export interface ShowCodeProps {
+    id: string;
+    code: string;
+    title: string;
+    style: any;
+    styleDark: any;
+  }
