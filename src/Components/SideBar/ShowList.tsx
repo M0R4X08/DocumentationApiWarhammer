@@ -16,6 +16,7 @@ const ShowList: React.FC<ShowListProps> = ({ title, List }) => {
           <Link
             spy={true}
             smooth={true}
+            duration={500}
             to={method.to}
             offset={-26}
             key={index}

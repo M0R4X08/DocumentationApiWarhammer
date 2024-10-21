@@ -1,9 +1,10 @@
 import ShowCodeList from "./ShowCodeList";
-import {
-  CodeListCharacter,
-  CodeListUser,
-} from "../../Constants/ConstantsCodeList";
-
+import { CodeListCharacter } from "../../Constants/CodeList/CharacterCodeList";
+import { CodeListUser } from "../../Constants/CodeList/UserCodeList";
+import { CodeListRace } from "../../Constants/CodeList/RaceCodeList";
+import { CodeListLogin } from "../../Constants/CodeList/LoginCodeList";
+import { CodeListFaction } from "../../Constants/CodeList/FactionCodeList";
+import { CodeListSubFaction } from "../../Constants/CodeList/SubFactionCodeList";
 const MainContent = () => {
   return (
     <>
@@ -15,8 +16,11 @@ const MainContent = () => {
       </section>
       <section className="m-2 sm:m-20">
         <ShowCodeList title="Character" codeList={CodeListCharacter} />
+        <ShowCodeList title="Race" codeList={CodeListRace} />
+        <ShowCodeList title="Faction" codeList={CodeListFaction} />
+        <ShowCodeList title="Subfaction" codeList={CodeListSubFaction} />
         <ShowCodeList title="User" codeList={CodeListUser} />
-
+        <ShowCodeList title="Login" codeList={CodeListLogin} />
         <div className="h-[50vh]"></div>
       </section>
     </>
