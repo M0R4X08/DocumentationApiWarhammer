@@ -22,25 +22,18 @@ export const findSubFactionAllOutput = `{
 }`;
 
 
-export const findSubFactionSingle = `fetch('https://localhost:3000/subfaction/race/1')
+export const findSubFactionSingle = `fetch('https://localhost:3000/api/subfaction/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
 
 export const findSubFactionSingleOutput = `{
-  "data": [
-    {
-      "id": 1,
-      "name": "Adeptus Astartes",
-      "faction_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Adeptus Custodes",
-      "faction_id": 1
-    }
-  ]
+  "data": {
+    "id": 1,
+    "name": "Adeptus Astartes",
+    "faction_id": 1
+  }
 }`;
 
 export const limitResultsSubFaction = `fetch('https://localhost:3000/api/subfaction/all?page=1&limit=1')

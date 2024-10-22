@@ -5,6 +5,8 @@ import {
   metodsRace,
   metodsFaction,
   metodsSubfactions,
+  metodsAlignment,
+  metodsRank,
   metodsLogin,
 } from "../../Constants/ConstantsListMethods";
 
@@ -15,6 +17,8 @@ const SideBar = () => {
       <ShowList title="Race" List={metodsRace} />
       <ShowList title="Faction" List={metodsFaction} />
       <ShowList title="Subfaction" List={metodsSubfactions} />
+      <ShowList title="Alignment" List={metodsAlignment} />
+      <ShowList title="Rank" List={metodsRank} />
       <ShowList title="User" List={metodsUsers} />
       <ShowList title="Login" List={metodsLogin} />
     </aside>

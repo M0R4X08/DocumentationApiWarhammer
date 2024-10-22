@@ -16,19 +16,17 @@ export const findFactionAllOutput = `{
 }`;
 
 
-export const findFactionSingle = `fetch('https://localhost:3000/faction/race/1')
+export const findFactionSingle = `fetch('https://localhost:3000/api/faction/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
 
 export const findFactionSingleOutput = `{
-  "data": [
-    {
-      "id": 1,
-      "name": "Imperium of Man"
-    }
-  ]
+  "data": {
+    "id": 1,
+    "name": "Imperium of Man"
+  }
 }`;
 
 export const limitResultsFaction = `fetch('https://localhost:3000/api/faction/all?page=1&limit=1')

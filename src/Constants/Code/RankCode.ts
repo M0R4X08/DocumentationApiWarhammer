@@ -1,53 +1,57 @@
-export const findRaceAll = `fetch('https://localhost:3000/api/race/all')
+export const findRankAll = `fetch('https://localhost:3000/api/rank/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
 
-export const findRaceAllOutput = `{
-  "totalData": 1,
+export const findRankAllOutput = `{
+  "totalData": 2,
   "totalPages": 1,
   "currentPage": 1,
   "data": [
     {
       "id": 1,
-      "name": "Human"
+      "name": "God-Emperor"
+    },
+    {
+      "id": 2,
+      "name": "Primarch"
     }
   ]
 }`;
 
 
-export const findRaceSingle = `fetch('https://localhost:3000/api/race/1')
+export const findRankSingle = `fetch('https://localhost:3000/api/rank/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
 
-export const findRaceSingleOutput = `{
+export const findRankSingleOutput = `{
   "data": {
     "id": 1,
-    "name": "Human"
+    "name": "God-Emperor"
   }
 }`;
 
-export const limitResultsRace = `fetch('https://localhost:3000/api/race/all?page=1&limit=1')
+export const limitResultsRank = `fetch('https://localhost:3000/api/rank/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
 
-export const limitResultsRaceOutput = `{
-  "totalData": 1,
-  "totalPages": 1,
+export const limitResultsRankOutput = `{
+  "totalData": 2,
+  "totalPages": 2,
   "currentPage": 1,
   "data": [
     {
       "id": 1,
-      "name": "Human"
+      "name": "God-Emperor"
     }
   ]
 }`;
 
-export const addNewRace = `fetch('https://localhost:3000/api/Race/create',
+export const addNewRank = `fetch('https://localhost:3000/api/rank/create',
   {
     method: 'POST',
     headers: {
@@ -56,20 +60,20 @@ export const addNewRace = `fetch('https://localhost:3000/api/Race/create',
     },
     body: JSON.stringify(
     {
-      "name": "", // Race name
+      "name": "", // Rank name
     })
   })
   .then((response) => response.json())
   .then((data) => console.log(data))
 `;
 
-export const addNewRaceOutput = `{
-  "message": "Race created successfully",
+export const addNewRankOutput = `{
+  "message": "Rank created successfully",
   "id": 2,
 }`;
 
 
-export const updateRace = `fetch('https://localhost:3000/api/Race/update/1',
+export const updateRank = `fetch('https://localhost:3000/api/rank/update/1',
   {
     method: 'PUT',
     headers: {
@@ -85,6 +89,6 @@ export const updateRace = `fetch('https://localhost:3000/api/Race/update/1',
   .then((data) => console.log(data))
 `;
 
-export const updateRaceOutput = `{
-  "message": "Race updated successfully"
+export const updateRankOutput = `{
+  "message": "Rank updated successfully"
 }`;

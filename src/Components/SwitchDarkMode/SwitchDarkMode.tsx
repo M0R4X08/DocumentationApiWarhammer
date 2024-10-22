@@ -5,9 +5,10 @@ const SwitchDarkMode = () => {
 
   const toggleDarkMode = (event: any) => {
     event.stopPropagation();
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark", darkMode);
-    localStorage.setItem("darkMode", darkMode ? "enabled" : "disabled");
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    localStorage.setItem("darkMode", newDarkMode ? "enabled" : "disabled");
   };
 
   useEffect(() => {
@@ -30,12 +31,12 @@ const SwitchDarkMode = () => {
     }
   }, []);
   return (
-    <button
+    <div
       className="w-14 h-[1.7rem] flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 cursor-pointer transition-colors duration-700"
       onClick={toggleDarkMode}
     >
       <span className="bg-white dark:bg-gray-900 w-5 h-5 rounded-full shadow-md transform transition-transform duration-700 ease-in-out translate-x-0 dark:translate-x-6"></span>
-    </button>
+    </div>
   );
 };
 export default SwitchDarkMode;

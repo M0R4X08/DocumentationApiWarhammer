@@ -17,7 +17,6 @@ const ShowCode: React.FC<ShowCodeProps> = ({
   const [showOutput, setShowOutput] = useState(false);
   const handleOutputCode = () => {
     setShowOutput(!showOutput);
-    console.log(showOutput);
   };
   return (
     <Element name={id} id={id} className="min-h-72 p-2">

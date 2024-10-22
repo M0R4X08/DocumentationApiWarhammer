@@ -1,53 +1,55 @@
-export const findRaceAll = `fetch('https://localhost:3000/api/race/all')
+export const findAlignmentAll = `fetch('https://localhost:3000/api/alignment/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
 
-export const findRaceAllOutput = `{
+export const findAlignmentAllOutput = `{
   "totalData": 1,
   "totalPages": 1,
   "currentPage": 1,
   "data": [
     {
       "id": 1,
-      "name": "Human"
+      "name": "Loyal to the Imperium"
     }
   ]
 }`;
 
 
-export const findRaceSingle = `fetch('https://localhost:3000/api/race/1')
+export const findAlignmentSingle = `fetch('https://localhost:3000/api/alignment/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
 
-export const findRaceSingleOutput = `{
-  "data": {
-    "id": 1,
-    "name": "Human"
-  }
+export const findAlignmentSingleOutput = `{
+  "data": [
+    {
+      "id": 1,
+      "name": "Loyal to the Imperium"
+    }
+  ]
 }`;
 
-export const limitResultsRace = `fetch('https://localhost:3000/api/race/all?page=1&limit=1')
+export const limitResultsAlignment = `fetch('https://localhost:3000/api/alignment/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
 `;
 
-export const limitResultsRaceOutput = `{
+export const limitResultsAlignmentOutput = `{
   "totalData": 1,
   "totalPages": 1,
   "currentPage": 1,
   "data": [
     {
       "id": 1,
-      "name": "Human"
+      "name": "Loyal to the Imperium"
     }
   ]
 }`;
 
-export const addNewRace = `fetch('https://localhost:3000/api/Race/create',
+export const addNewAlignment = `fetch('https://localhost:3000/api/alignment/create',
   {
     method: 'POST',
     headers: {
@@ -56,20 +58,20 @@ export const addNewRace = `fetch('https://localhost:3000/api/Race/create',
     },
     body: JSON.stringify(
     {
-      "name": "", // Race name
+      "name": "", // Alignment name
     })
   })
   .then((response) => response.json())
   .then((data) => console.log(data))
 `;
 
-export const addNewRaceOutput = `{
-  "message": "Race created successfully",
+export const addNewAlignmentOutput = `{
+  "message": "Alignment created successfully",
   "id": 2,
 }`;
 
 
-export const updateRace = `fetch('https://localhost:3000/api/Race/update/1',
+export const updateAlignment = `fetch('https://localhost:3000/api/alignment/update/1',
   {
     method: 'PUT',
     headers: {
@@ -85,6 +87,6 @@ export const updateRace = `fetch('https://localhost:3000/api/Race/update/1',
   .then((data) => console.log(data))
 `;
 
-export const updateRaceOutput = `{
-  "message": "Race updated successfully"
+export const updateAlignmentOutput = `{
+  "message": "Alignment updated successfully"
 }`;

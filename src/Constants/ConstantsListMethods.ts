@@ -28,6 +28,23 @@ export const metodsSubfactions: ApiMethodList[] = [
   { name: "Add new subfaction", to: "subfaction-add" },
   { name: "Update subfaction", to: "subfaction-update" },
 ];
+
+export const metodsAlignment: ApiMethodList[] = [
+  { name: "Find all alignment", to: "alignment-find-all" },
+  { name: "Find a single alignment", to: "alignment-find-single" },
+  { name: "Limit results", to: "alignment-limit" },
+  { name: "Add new alignment", to: "alignment-add" },
+  { name: "Update alignment", to: "alignment-update" },
+];
+
+export const metodsRank: ApiMethodList[] = [
+  { name: "Find all rank", to: "rank-find-all" },
+  { name: "Find a single rank", to: "rank-find-single" },
+  { name: "Limit results", to: "rank-limit" },
+  { name: "Add new rank", to: "rank-add" },
+  { name: "Update rank", to: "rank-update" },
+];
+
 export const metodsUsers: ApiMethodList[] = [
     { name: "Find all users", to: "user-find-all" },
     { name: "Find a single user", to: "user-find-single" },
