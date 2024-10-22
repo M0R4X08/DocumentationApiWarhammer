@@ -13,10 +13,18 @@ const MediumScreenMenu = () => {
         <hr className="border-t-2 border-black/30 dark:border-gray-400 w-3/4 mx-auto mt-4 mb-3" />
       </div>
       <div className="flex items-center gap-4 text-2xl">
-        <a href="/" className="text-black dark:text-white">
+        <a
+          href="https://github.com/M0R4X08"
+          className="text-black dark:text-white"
+          target="_blank"
+        >
           <Github />
         </a>
-        <a href="/" className="text-blue-700/95 dark:text-gray-300">
+        <a
+          href="https://linkedin.com/in/steven-moran-dev"
+          className="text-blue-700/95 dark:text-gray-300"
+          target="_blank"
+        >
           <Linkedin />
         </a>
       </div>

@@ -38,9 +38,20 @@ const Nav = () => {
         </div>
 
         <div className="flex gap-2 w-full h-full items-center justify-end mr-48 sm:mr-24 lg:mr-52 xl:mr-28">
-          <div className="hidden sm:flex gap-6 text-lg">
-            <a href="/">Home</a>
-            <a href="/">Documentacion</a>
+          <div className="hidden sm:flex gap-6 text-lg font-lexend font-light">
+            <a
+              href="/"
+              className="hover:text-gray-950 dark:hover:text-gray-400"
+            >
+              Documentation
+            </a>
+            <a
+              href="https://paypal.me/M0R4X08"
+              className="hover:text-gray-950 dark:hover:text-gray-400"
+              target="_blank"
+            >
+              Buy me a coffe
+            </a>
           </div>
           <div className="hidden lg:flex items-center h-full ">
             <span className="text-4xl">
@@ -52,10 +63,18 @@ const Nav = () => {
             </span>
           </div>
           <div className="gap-6 items-center h-full hidden lg:flex text-3xl ">
-            <a href="/" className="text-black dark:text-white">
+            <a
+              href="https://github.com/M0R4X08"
+              className="text-black dark:text-white"
+              target="_blank"
+            >
               <Github />
             </a>
-            <a href="/" className="text-blue-700/95 dark:text-gray-300">
+            <a
+              href="https://linkedin.com/in/steven-moran-dev"
+              className="text-blue-700/95 dark:text-gray-300"
+              target="_blank"
+            >
               <Linkedin />
             </a>
           </div>

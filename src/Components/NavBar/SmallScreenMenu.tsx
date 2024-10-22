@@ -21,8 +21,16 @@ const SmallScreenMenu: React.FC<SmallScreenMenuProps> = ({
         <button onClick={handleShowSmallMenu}>X</button>
       </div>
       <div className="flex flex-col items-center gap-10 mb-10 text-lg p-4 mt-28 text-gray-800/90 dark:text-gray-100 ">
-        <a href="/">Home</a>
-        <a href="/">Documentacion</a>
+        <a href="/" className="hover:text-gray-950 dark:hover:text-gray-400">
+          Documentation
+        </a>
+        <a
+          href="https://paypal.me/M0R4X08"
+          className="hover:text-gray-950 dark:hover:text-gray-400"
+          target="_blank"
+        >
+          Buy me a coffe
+        </a>
       </div>
       <div className="flex gap-3">
         <p>Dark Mode:</p>
