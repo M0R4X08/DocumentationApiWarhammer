@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { lazy, useMemo, Suspense, useState } from "react";
 import { Element } from "react-scroll";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { ShowCodeProps } from "../../Types/Interface";
 import useDarkMode from "../../Hooks/useDarkMode";
-import ShowCodeOutput from "./ShowCodeOutput";
+const ShowCodeOutput = lazy(() => import("./ShowCodeOutput"));
 
 const ShowCode: React.FC<ShowCodeProps> = ({
   id,
@@ -16,22 +16,24 @@ const ShowCode: React.FC<ShowCodeProps> = ({
   const isDark = useDarkMode();
   const [showOutput, setShowOutput] = useState(false);
   const handleOutputCode = () => {
-    setShowOutput(!showOutput);
+    setShowOutput((prev) => !prev);
   };
+  const syntaxStyle = useMemo(() => (isDark ? styleDark : style), [isDark]);
+  const syntaxCode = useMemo(() => code, [code]);
   return (
     <Element name={id} id={id} className="min-h-72 p-2">
       <h3 className="font-lexend mb-[10px] text-lg/5 font-light">{title}</h3>
       <div className="overflow-x-auto max-w-full sm:max-w-screen-md">
         <SyntaxHighlighter
           language="javascript"
-          style={isDark ? styleDark : style}
+          style={syntaxStyle}
           className={
             isDark
               ? "border-[1px] border-gray-600"
               : "border-[1px] border-gray-300"
           }
         >
-          {code}
+          {syntaxCode}
         </SyntaxHighlighter>
       </div>
       <button
@@ -41,9 +43,15 @@ const ShowCode: React.FC<ShowCodeProps> = ({
         {showOutput ? "Hide Output" : "Show Output"}
       </button>
 
-      {showOutput && (
-        <ShowCodeOutput code={codeOutput} style={style} styleDark={styleDark} />
-      )}
+      <Suspense>
+        {showOutput && (
+          <ShowCodeOutput
+            code={codeOutput}
+            style={style}
+            styleDark={styleDark}
+          />
+        )}
+      </Suspense>
     </Element>
   );
 };
