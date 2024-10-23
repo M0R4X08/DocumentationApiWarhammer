@@ -3,10 +3,16 @@ import { useEffect, useState } from "react";
 const useDarkMode = () => {
   const verifyClass = () => {
     const isDark = localStorage.getItem("darkMode");
+    const defaultTheme = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     if (isDark && isDark === "enabled") {
       return true;
+    } else if (defaultTheme && !isDark) {
+      return true;
+    } else {
+      return false;
     }
-    return false;
   };
   const [isDark, setIsDark] = useState(verifyClass());
 
