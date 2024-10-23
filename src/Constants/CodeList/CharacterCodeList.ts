@@ -1,48 +1,38 @@
-import { oneLight, oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+const { findAll,findSingle,limitResults,addNew,update } = await import("../Code/CodeApiMethods");
+const {findOutput,findSingleOutput,addNewOutput,updateOutput} = await import("../Code/CodeApiMethodsOutput");
+const {bodyAddCharacter,bodyUpdate,outputCharacter} = await import("../Code/CodeDataMethods");
 
-import { findCharactersAll,findCharacterSingle,limitResultsCharacters, addNewCharacter,updateCharacter } from "../Code/CharacterCode"
-import { findCharacterAllOutput,findCharacterSingleOutput,limitResultsCharactersOutput,addNewCharacterOutput,updateCharacterOutput } from "../Code/CharacterCode";
-
+const classname = "character";
 export const CodeListCharacter =[
     {
       id: "character-find-all",
       subtitle: "Character find all",
-      style: oneLight,
-      styleDark: oneDark,
-      code: findCharactersAll,
-      codeOutput: findCharacterAllOutput,
+      code: findAll(classname),
+      codeOutput: findOutput(outputCharacter,19,1,1),
     },
     {
       id: "character-find-single",
       subtitle: "Character find single",
-      style: oneLight,
-      styleDark: oneDark,
-      code: findCharacterSingle,
-      codeOutput: findCharacterSingleOutput,
+      code: findSingle(classname,1),
+      codeOutput: findSingleOutput(outputCharacter),
     },
     {
       id: "character-limit",
       subtitle: "Limit results",
-      style: oneLight,
-      styleDark: oneDark,
-      code: limitResultsCharacters,
-      codeOutput: limitResultsCharactersOutput,
+      code: limitResults(classname,1,1),
+      codeOutput: findOutput(outputCharacter,19,1,1,true),
     },
     {
       id: "character-add",
       subtitle: "Add new character",
-      style: oneLight,
-      styleDark: oneDark,
-      code: addNewCharacter,
-      codeOutput: addNewCharacterOutput,
+      code: addNew(classname,bodyAddCharacter),
+      codeOutput: addNewOutput("Character",21),
     },
     {
       id: "character-update",
       subtitle: "Update character",
-      style: oneLight,
-      styleDark: oneDark,
-      code: updateCharacter,
-      codeOutput: updateCharacterOutput,
+      code: update(classname,1,bodyUpdate),
+      codeOutput: updateOutput("Character"),
     }
   ];
   

@@ -1,12 +1,24 @@
-import { CodeListCharacter } from "../../Constants/CodeList/CharacterCodeList";
-import { CodeListUser } from "../../Constants/CodeList/UserCodeList";
-import { CodeListRace } from "../../Constants/CodeList/RaceCodeList";
-import { CodeListLogin } from "../../Constants/CodeList/LoginCodeList";
-import { CodeListFaction } from "../../Constants/CodeList/FactionCodeList";
-import { CodeListSubFaction } from "../../Constants/CodeList/SubFactionCodeList";
-import { CodeListAlignment } from "../../Constants/CodeList/AlignmentCodeList";
-import { CodeListRank } from "../../Constants/CodeList/RankCodeList";
 import { lazy, Suspense } from "react";
+const { CodeListCharacter } = await import(
+  "../../Constants/CodeList/CharacterCodeList"
+);
+const { CodeListRace } = await import("../../Constants/CodeList/RaceCodeList");
+
+const { CodeListFaction } = await import(
+  "../../Constants/CodeList/FactionCodeList"
+);
+const { CodeListSubFaction } = await import(
+  "../../Constants/CodeList/SubFactionCodeList"
+);
+const { CodeListAlignment } = await import(
+  "../../Constants/CodeList/AlignmentCodeList"
+);
+const { CodeListRank } = await import("../../Constants/CodeList/RankCodeList");
+
+const { CodeListUser } = await import("../../Constants/CodeList/UserCodeList");
+const { CodeListLogin } = await import(
+  "../../Constants/CodeList/LoginCodeList"
+);
 
 const ShowCodeList = lazy(() => import("./ShowCodeList"));
 const MainContent = () => {

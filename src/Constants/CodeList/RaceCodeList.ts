@@ -1,45 +1,38 @@
-import { oneLight, oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { findRaceAll,findRaceSingle,limitResultsRace, addNewRace,updateRace } from "../Code/RaceCode"
-import { findRaceAllOutput,findRaceSingleOutput,limitResultsRaceOutput,addNewRaceOutput,updateRaceOutput } from "../Code/RaceCode";
-export const CodeListRace =[
+const { findAll,findSingle,limitResults,addNew,update } = await import("../Code/CodeApiMethods");
+const {findOutput,findSingleOutput,addNewOutput,updateOutput} = await import("../Code/CodeApiMethodsOutput");
+
+const {bodyUpdate,outputRace} = await import("../Code/CodeDataMethods");
+
+const classname = "race";
+export const CodeListRace = [
     {
       id: "race-find-all",
       subtitle: "Race find all",
-      style: oneLight,
-      styleDark: oneDark,
-      code: findRaceAll,
-      codeOutput: findRaceAllOutput,
+      code: findAll(classname),
+      codeOutput: findOutput(outputRace,1,1,1),
     },
     {
       id: "race-find-single",
       subtitle: "Race find single",
-      style: oneLight,
-      styleDark: oneDark,
-      code: findRaceSingle,
-      codeOutput: findRaceSingleOutput,
+      code: findSingle(classname,1),
+      codeOutput: findSingleOutput(outputRace),
     },
     {
       id: "race-limit",
       subtitle: "Limit results",
-      style: oneLight,
-      styleDark: oneDark,
-      code: limitResultsRace,
-      codeOutput: limitResultsRaceOutput,
+      code: limitResults(classname,1,1),
+      codeOutput: findOutput(outputRace,1,1,1,true),
     },
     {
       id: "race-add",
       subtitle: "Add new race",
-      style: oneLight,
-      styleDark: oneDark,
-      code: addNewRace,
-      codeOutput: addNewRaceOutput,
+      code: addNew(classname,`<span class="text-red-600 dark:text-red-400">"name"</span>: <span class="text-lime-600/85 dark:text-lime-300/75">""</span>, // Race name`),
+      codeOutput: addNewOutput("Race",2),
     },
     {
       id: "race-update",
       subtitle: "Update race",
-      style: oneLight,
-      styleDark: oneDark,
-      code: updateRace,
-      codeOutput: updateRaceOutput,
+      code: update(classname,1,bodyUpdate),
+      codeOutput: updateOutput("Race"),
     }
   ];

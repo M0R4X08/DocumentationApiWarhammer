@@ -1,14 +1,11 @@
-import { oneLight, oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { login, loginOutput } from "../Code/LoginCode";
+const { login} = await import("../Code/CodeApiMethods");
+const {loginOutput} = await import("../Code/CodeApiMethodsOutput");
 
-
-  export const CodeListLogin =[
+  export const CodeListLogin = [
     {
       id: "login",
       subtitle: "Login",
-      style: oneLight,
-      styleDark: oneDark,
-      code: login,
-      codeOutput: loginOutput,
+      code: login(),
+      codeOutput: loginOutput(),
     },
   ];

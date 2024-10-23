@@ -11,8 +11,6 @@ const ShowCodeList: React.FC<ShowCodeListProps> = ({ codeList, title }) => {
             <ShowCode
               id={code.id}
               title={code.subtitle}
-              style={code.style}
-              styleDark={code.styleDark}
               code={code.code}
               codeOutput={code.codeOutput}
             />

@@ -7,8 +7,6 @@ export interface ApiMethodList{
 export interface CodeList{
     id: string,
     subtitle: string,
-    style: any,
-    styleDark: any,
     code: any,
     codeOutput?: any,
 }
@@ -18,11 +16,13 @@ export interface ShowCodeProps {
     code: any;
     codeOutput?: any;
     title: string;
-    style: any;
-    styleDark: any;
+
 }
 
 export interface ShowCodeListProps {
     title: string;
     codeList: CodeList[];
+}
+export interface ShowCodeOutPutProps {
+    code: string;
 }

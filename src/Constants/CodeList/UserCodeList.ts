@@ -1,47 +1,38 @@
-import { oneLight, oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+const { findAll,findSingle,limitResults,addNew,update } = await import("../Code/CodeApiMethods");
+const {findOutput,findSingleOutput,addNewOutput,updateOutput} = await import("../Code/CodeApiMethodsOutput");
+const {outputUser, bodyAddUser, bodyUpdateUser} = await import("../Code/CodeDataMethods");
 
-import { findUserAll, findUserSingle, limitResultsUser, addNewUser, updateUser } from "../Code/UserCode";
-import { findUserAllOutput, findUserSingleOutput, limitResultsUserOutput,addNewUserOutput,updateUserOutput } from "../Code/UserCode";
+const classname = "user";
 
 export const CodeListUser =[
     {
       id: "user-find-all",
       subtitle: "User find all",
-      style: oneLight,
-      styleDark: oneDark,
-      code: findUserAll,
-      codeOutput: findUserAllOutput,
+      code: findAll(classname),
+      codeOutput: findOutput(outputUser,1,1,1),
     },
     {
       id: "user-find-single",
       subtitle: "User find single",
-      style: oneLight,
-      styleDark: oneDark,
-      code: findUserSingle,
-      codeOutput: findUserSingleOutput,
+      code: findSingle(classname,1),
+      codeOutput: findSingleOutput(outputUser),
     },
     {
       id: "user-limit",
-      subtitle: "User results",
-      style: oneLight,
-      styleDark: oneDark,
-      code: limitResultsUser,
-      codeOutput: limitResultsUserOutput,
+      subtitle: "Limit results",
+      code: limitResults(classname,1,1),
+      codeOutput: findOutput(outputUser,1,1,1,true),
     },
     {
       id: "user-add",
-      subtitle: "User new character",
-      style: oneLight,
-      styleDark: oneDark,
-      code: addNewUser,
-      codeOutput: addNewUserOutput,
+      subtitle: "Add new user",
+      code: addNew(classname,bodyAddUser),
+      codeOutput: addNewOutput("User",2),
     },
     {
       id: "user-update",
       subtitle: "Update user",
-      style: oneLight,
-      styleDark: oneDark,
-      code: updateUser,
-      codeOutput: updateUserOutput,
+      code: update(classname,1,bodyUpdateUser),
+      codeOutput: updateOutput("User"),
     }
   ];

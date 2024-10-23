@@ -1,46 +1,38 @@
-import { oneLight, oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { findAlignmentAll, findAlignmentSingle, limitResultsAlignment, addNewAlignment, updateAlignment } from "../Code/AlignmentCode";
-import { findAlignmentAllOutput, findAlignmentSingleOutput, limitResultsAlignmentOutput, addNewAlignmentOutput, updateAlignmentOutput } from "../Code/AlignmentCode";
+const { findAll,findSingle,limitResults,addNew,update } = await import("../Code/CodeApiMethods");
+const {findOutput,findSingleOutput,addNewOutput,updateOutput} = await import("../Code/CodeApiMethodsOutput");
 
+const {bodyUpdate,outputAlingment} = await import("../Code/CodeDataMethods");
+
+const classname = "alignment";
 export const CodeListAlignment =[
     {
       id: "alignment-find-all",
       subtitle: "Alignment find all",
-      style: oneLight,
-      styleDark: oneDark,
-      code: findAlignmentAll,
-      codeOutput: findAlignmentAllOutput,
+      code: findAll(classname),
+      codeOutput: findOutput(outputAlingment,1,1,1),
     },
     {
       id: "alignment-find-single",
       subtitle: "Alignment find single",
-      style: oneLight,
-      styleDark: oneDark,
-      code: findAlignmentSingle,
-      codeOutput: findAlignmentSingleOutput,
+      code: findSingle(classname,1),
+      codeOutput: findSingleOutput(outputAlingment),
     },
     {
       id: "alignment-limit",
       subtitle: "Limit results",
-      style: oneLight,
-      styleDark: oneDark,
-      code: limitResultsAlignment,
-      codeOutput: limitResultsAlignmentOutput,
+      code: limitResults(classname,1,1),
+      codeOutput: findOutput(outputAlingment,1,1,1,true),
     },
     {
       id: "alignment-add",
       subtitle: "Add new alignment",
-      style: oneLight,
-      styleDark: oneDark,
-      code: addNewAlignment,
-      codeOutput: addNewAlignmentOutput,
+      code: addNew(classname,`<span class="text-red-600 dark:text-red-400">"name"</span>: <span class="text-lime-600/85 dark:text-lime-300/75">""</span>, // Alignment name`),
+      codeOutput: addNewOutput("Alignment",2),
     },
     {
       id: "alignment-update",
       subtitle: "Update alignment",
-      style: oneLight,
-      styleDark: oneDark,
-      code: updateAlignment,
-      codeOutput: updateAlignmentOutput,
+      code: update(classname,1,bodyUpdate),
+      codeOutput: updateOutput("Alignment"),
     }
   ];
