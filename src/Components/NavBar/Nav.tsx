@@ -18,7 +18,7 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    document.body.classList.toggle("overflow-hidden");
+    document.body.classList.toggle("overflow-x-hidden");
   }, [showSmallMenu]);
 
   const handleShowSmallMenu = () => {
