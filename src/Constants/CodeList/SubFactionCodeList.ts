@@ -1,6 +1,6 @@
-const { findAll,findSingle,limitResults,addNew,update } = await import("../Code/CodeApiMethods");
-const {findOutput,findSingleOutput,addNewOutput,updateOutput} = await import("../Code/CodeApiMethodsOutput");
-const {bodyUpdate,outputSubfaction} = await import("../Code/CodeDataMethods");
+import { findAll,findSingle,limitResults,addNew,update }  from "../Code/CodeApiMethods";
+import {findOutput,findSingleOutput,addNewOutput,updateOutput}  from"../Code/CodeApiMethodsOutput";
+import {bodyUpdate,outputSubfaction} from "../Code/CodeDataMethods";
 
 
 const classname = "subfaction";

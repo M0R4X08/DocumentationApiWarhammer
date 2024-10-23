@@ -1,5 +1,5 @@
-const { login} = await import("../Code/CodeApiMethods");
-const {loginOutput} = await import("../Code/CodeApiMethodsOutput");
+import { login} from "../Code/CodeApiMethods";
+import {loginOutput} from "../Code/CodeApiMethodsOutput";
 
   export const CodeListLogin = [
     {

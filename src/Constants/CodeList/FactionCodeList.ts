@@ -1,6 +1,6 @@
-const { findAll,findSingle,limitResults,addNew,update } = await import("../Code/CodeApiMethods");
-const {findOutput,findSingleOutput,addNewOutput,updateOutput} = await import("../Code/CodeApiMethodsOutput");
-const {bodyUpdate,outputFaction} = await import("../Code/CodeDataMethods");
+import { findAll,findSingle,limitResults,addNew,update }  from "../Code/CodeApiMethods";
+import {findOutput,findSingleOutput,addNewOutput,updateOutput}  from"../Code/CodeApiMethodsOutput";
+import {bodyUpdate,outputFaction} from "../Code/CodeDataMethods";
 
 const classname = "faction";
 export const CodeListFaction = [
@@ -20,7 +20,7 @@ export const CodeListFaction = [
       id: "faction-limit",
       subtitle: "Limit results",
       code: limitResults(classname,1,1),
-      codeOutput: findOutput(outputFaction,1,1,1),
+      codeOutput: findOutput(outputFaction,1,1,1,true),
     },
     {
       id: "faction-add",

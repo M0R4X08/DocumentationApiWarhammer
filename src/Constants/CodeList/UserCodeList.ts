@@ -1,6 +1,6 @@
-const { findAll,findSingle,limitResults,addNew,update } = await import("../Code/CodeApiMethods");
-const {findOutput,findSingleOutput,addNewOutput,updateOutput} = await import("../Code/CodeApiMethodsOutput");
-const {outputUser, bodyAddUser, bodyUpdateUser} = await import("../Code/CodeDataMethods");
+import { findAll,findSingle,limitResults,addNew,update }  from "../Code/CodeApiMethods";
+import {findOutput,findSingleOutput,addNewOutput,updateOutput}  from"../Code/CodeApiMethodsOutput";
+import {outputUser, bodyAddUser, bodyUpdateUser} from "../Code/CodeDataMethods";
 
 const classname = "user";
 
