@@ -1,4 +1,4 @@
-export const findSubFactionAll = `fetch('https://localhost:3000/api/subfaction/all')
+export const findSubFactionAll = `fetch('https://api-warhammer.vercel.app/api/subfaction/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
@@ -22,7 +22,7 @@ export const findSubFactionAllOutput = `{
 }`;
 
 
-export const findSubFactionSingle = `fetch('https://localhost:3000/api/subfaction/1')
+export const findSubFactionSingle = `fetch('https://api-warhammer.vercel.app/api/subfaction/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -36,7 +36,7 @@ export const findSubFactionSingleOutput = `{
   }
 }`;
 
-export const limitResultsSubFaction = `fetch('https://localhost:3000/api/subfaction/all?page=1&limit=1')
+export const limitResultsSubFaction = `fetch('https://api-warhammer.vercel.app/api/subfaction/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -55,7 +55,7 @@ export const limitResultsSubFactionOutput = `{
   ]
 }`;
 
-export const addNewSubFaction = `fetch('https://localhost:3000/api/subfaction/create',
+export const addNewSubFaction = `fetch('https://api-warhammer.vercel.app/api/subfaction/create',
   {
     method: 'POST',
     headers: {
@@ -78,7 +78,7 @@ export const addNewSubFactionOutput = `{
 }`;
 
 
-export const updateSubFaction = `fetch('https://localhost:3000/api/subfaction/update/1',
+export const updateSubFaction = `fetch('https://api-warhammer.vercel.app/api/subfaction/update/1',
   {
     method: 'PUT',
     headers: {

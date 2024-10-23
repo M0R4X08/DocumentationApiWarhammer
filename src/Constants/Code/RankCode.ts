@@ -1,4 +1,4 @@
-export const findRankAll = `fetch('https://localhost:3000/api/rank/all')
+export const findRankAll = `fetch('https://api-warhammer.vercel.app/api/rank/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
@@ -20,7 +20,7 @@ export const findRankAllOutput = `{
 }`;
 
 
-export const findRankSingle = `fetch('https://localhost:3000/api/rank/1')
+export const findRankSingle = `fetch('https://api-warhammer.vercel.app/api/rank/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -33,7 +33,7 @@ export const findRankSingleOutput = `{
   }
 }`;
 
-export const limitResultsRank = `fetch('https://localhost:3000/api/rank/all?page=1&limit=1')
+export const limitResultsRank = `fetch('https://api-warhammer.vercel.app/api/rank/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -51,7 +51,7 @@ export const limitResultsRankOutput = `{
   ]
 }`;
 
-export const addNewRank = `fetch('https://localhost:3000/api/rank/create',
+export const addNewRank = `fetch('https://api-warhammer.vercel.app/api/rank/create',
   {
     method: 'POST',
     headers: {
@@ -73,7 +73,7 @@ export const addNewRankOutput = `{
 }`;
 
 
-export const updateRank = `fetch('https://localhost:3000/api/rank/update/1',
+export const updateRank = `fetch('https://api-warhammer.vercel.app/api/rank/update/1',
   {
     method: 'PUT',
     headers: {

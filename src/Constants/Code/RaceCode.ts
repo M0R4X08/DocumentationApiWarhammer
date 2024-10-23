@@ -1,4 +1,4 @@
-export const findRaceAll = `fetch('https://localhost:3000/api/race/all')
+export const findRaceAll = `fetch('https://api-warhammer.vercel.app/api/race/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
@@ -16,7 +16,7 @@ export const findRaceAllOutput = `{
 }`;
 
 
-export const findRaceSingle = `fetch('https://localhost:3000/api/race/1')
+export const findRaceSingle = `fetch('https://api-warhammer.vercel.app/api/race/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -29,7 +29,7 @@ export const findRaceSingleOutput = `{
   }
 }`;
 
-export const limitResultsRace = `fetch('https://localhost:3000/api/race/all?page=1&limit=1')
+export const limitResultsRace = `fetch('https://api-warhammer.vercel.app/api/race/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -47,7 +47,7 @@ export const limitResultsRaceOutput = `{
   ]
 }`;
 
-export const addNewRace = `fetch('https://localhost:3000/api/Race/create',
+export const addNewRace = `fetch('https://api-warhammer.vercel.app/api/Race/create',
   {
     method: 'POST',
     headers: {
@@ -69,7 +69,7 @@ export const addNewRaceOutput = `{
 }`;
 
 
-export const updateRace = `fetch('https://localhost:3000/api/Race/update/1',
+export const updateRace = `fetch('https://api-warhammer.vercel.app/api/Race/update/1',
   {
     method: 'PUT',
     headers: {

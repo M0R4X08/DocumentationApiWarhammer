@@ -1,4 +1,4 @@
-export const findCharactersAll = `fetch('https://localhost:3000/api/characters/all')
+export const findCharactersAll = `fetch('https://api-warhammer.vercel.app/api/characters/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
@@ -50,7 +50,7 @@ export const findCharacterAllOutput = `{
 }
 `;
 
-export const findCharacterSingle = `fetch('https://localhost:3000/api/characters/1')
+export const findCharacterSingle = `fetch('https://api-warhammer.vercel.app/api/characters/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -98,7 +98,7 @@ export const findCharacterSingleOutput = `{
   ]
 }`;
 
-export const limitResultsCharacters = `fetch('https://localhost:3000/api/characters/all?page=1&limit=1')
+export const limitResultsCharacters = `fetch('https://api-warhammer.vercel.app/api/characters/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -149,7 +149,7 @@ export const limitResultsCharactersOutput = `{
   ]
 }`;
 
-export const addNewCharacter = `fetch('https://localhost:3000/api/characters/create',
+export const addNewCharacter = `fetch('https://api-warhammer.vercel.app/api/characters/create',
   {
     method: 'POST',
     headers: {
@@ -189,7 +189,7 @@ export const addNewCharacterOutput = `{
 }
 `;
 
-export const updateCharacter = `fetch('https://localhost:3000/api/characters/update/1',
+export const updateCharacter = `fetch('https://api-warhammer.vercel.app/api/characters/update/1',
   {
     method: 'PUT',
     headers: {

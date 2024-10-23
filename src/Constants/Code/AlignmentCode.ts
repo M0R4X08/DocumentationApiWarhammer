@@ -1,4 +1,4 @@
-export const findAlignmentAll = `fetch('https://localhost:3000/api/alignment/all')
+export const findAlignmentAll = `fetch('https://api-warhammer.vercel.app/api/alignment/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
@@ -16,7 +16,7 @@ export const findAlignmentAllOutput = `{
 }`;
 
 
-export const findAlignmentSingle = `fetch('https://localhost:3000/api/alignment/1')
+export const findAlignmentSingle = `fetch('https://api-warhammer.vercel.app/api/alignment/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -31,7 +31,7 @@ export const findAlignmentSingleOutput = `{
   ]
 }`;
 
-export const limitResultsAlignment = `fetch('https://localhost:3000/api/alignment/all?page=1&limit=1')
+export const limitResultsAlignment = `fetch('https://api-warhammer.vercel.app/api/alignment/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -49,7 +49,7 @@ export const limitResultsAlignmentOutput = `{
   ]
 }`;
 
-export const addNewAlignment = `fetch('https://localhost:3000/api/alignment/create',
+export const addNewAlignment = `fetch('https://api-warhammer.vercel.app/api/alignment/create',
   {
     method: 'POST',
     headers: {
@@ -71,7 +71,7 @@ export const addNewAlignmentOutput = `{
 }`;
 
 
-export const updateAlignment = `fetch('https://localhost:3000/api/alignment/update/1',
+export const updateAlignment = `fetch('https://api-warhammer.vercel.app/api/alignment/update/1',
   {
     method: 'PUT',
     headers: {

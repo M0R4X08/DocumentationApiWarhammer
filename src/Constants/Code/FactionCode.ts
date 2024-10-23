@@ -1,4 +1,4 @@
-export const findFactionAll = `fetch('https://localhost:3000/api/faction/all')
+export const findFactionAll = `fetch('https://api-warhammer.vercel.app/api/faction/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
@@ -16,7 +16,7 @@ export const findFactionAllOutput = `{
 }`;
 
 
-export const findFactionSingle = `fetch('https://localhost:3000/api/faction/1')
+export const findFactionSingle = `fetch('https://api-warhammer.vercel.app/api/faction/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -29,7 +29,7 @@ export const findFactionSingleOutput = `{
   }
 }`;
 
-export const limitResultsFaction = `fetch('https://localhost:3000/api/faction/all?page=1&limit=1')
+export const limitResultsFaction = `fetch('https://api-warhammer.vercel.app/api/faction/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -47,7 +47,7 @@ export const limitResultsFactionOutput = `{
   ]
 }`;
 
-export const addNewFaction = `fetch('https://localhost:3000/api/faction/create',
+export const addNewFaction = `fetch('https://api-warhammer.vercel.app/api/faction/create',
   {
     method: 'POST',
     headers: {
@@ -69,7 +69,7 @@ export const addNewFactionOutput = `{
 }`;
 
 
-export const updateFaction = `fetch('https://localhost:3000/api/faction/update/1',
+export const updateFaction = `fetch('https://api-warhammer.vercel.app/api/faction/update/1',
   {
     method: 'PUT',
     headers: {

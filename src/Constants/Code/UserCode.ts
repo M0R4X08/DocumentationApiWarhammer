@@ -1,4 +1,4 @@
-export const findUserAll = `fetch('https://localhost:3000/api/user/all')
+export const findUserAll = `fetch('https://api-warhammer.vercel.app/api/user/all')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));`;
@@ -18,7 +18,7 @@ export const findUserAllOutput = `{
 }`;
 
 
-export const findUserSingle = `fetch('https://localhost:3000/api/user/1')
+export const findUserSingle = `fetch('https://api-warhammer.vercel.app/api/user/1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -33,7 +33,7 @@ export const findUserSingleOutput = `{
   }
 }`;
 
-export const limitResultsUser = `fetch('https://localhost:3000/api/user/all?page=1&limit=1')
+export const limitResultsUser = `fetch('https://api-warhammer.vercel.app/api/user/all?page=1&limit=1')
       .then((response) => res.json()) 
       .then((data) => console.log(data))
       .catch(error => console.error('Error:', error));
@@ -53,7 +53,7 @@ export const limitResultsUserOutput = `{
   ]
 }`;
 
-export const addNewUser = `fetch('https://localhost:3000/api/user/create',
+export const addNewUser = `fetch('https://api-warhammer.vercel.app/api/user/create',
   {
     method: 'POST',
     headers: {
@@ -78,7 +78,7 @@ export const addNewUserOutput = `{
 }`;
 
 
-export const updateUser = `fetch('https://localhost:3000/api/user/update/1',
+export const updateUser = `fetch('https://api-warhammer.vercel.app/api/user/update/1',
   {
     method: 'PUT',
     headers: {
