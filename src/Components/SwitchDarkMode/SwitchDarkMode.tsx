@@ -8,16 +8,21 @@ const SwitchDarkMode = () => {
     const newDarkMode = !darkMode;
     setDarkMode(newDarkMode);
     document.documentElement.classList.toggle("dark", newDarkMode);
-    //localStorage.setItem("darkMode", newDarkMode ? "enabled" : "disabled");
-    //return newDarkMode;
+    localStorage.setItem("darkMode", newDarkMode ? "enabled" : "disabled");
   };
 
   useEffect(() => {
     const defaultTheme = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
-
-    if (defaultTheme) {
+    const localTheme = localStorage.getItem("darkMode");
+    if (localTheme === "enabled") {
+      document.documentElement.classList.add("dark");
+      setDarkMode(true);
+    } else if (localTheme === "disabled") {
+      document.documentElement.classList.remove("dark");
+      setDarkMode(false);
+    } else if (defaultTheme) {
       document.documentElement.classList.add("dark");
       setDarkMode(true);
     } else {
